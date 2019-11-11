@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2019-11-11
+  quantidade: 1.5
+  pessoa: one
+  operacao: one
+  produto: one
+
+two:
+  data: 2019-11-11
+  quantidade: 1.5
+  pessoa: two
+  operacao: two
+  produto: two
