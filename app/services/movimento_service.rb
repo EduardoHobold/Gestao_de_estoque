@@ -39,23 +39,24 @@ class MovimentoService
     end
 
     def vender 
-        estoque = Movimento.por_operacao(@produto, Date.today, 2) + #compra
-                  Movimento.por_operacao(@produto, Date.today, 3) - #devolucao de venda
-                  Movimento.por_operacao(@produto, Date.today, 1) - #venda
-                  Movimento.por_operacao(@produto, Date.today, 4) #devolucao de comrpa
+        # Tipos de operação:  1 = Venda, 2 = Compra, 3 = DevVenda, 4 = DevCompra
+        estoque = Movimento.por_operacao(@produto, Date.today, 2) + 
+                  Movimento.por_operacao(@produto, Date.today, 3) -
+                  Movimento.por_operacao(@produto, Date.today, 1) -
+                  Movimento.por_operacao(@produto, Date.today, 4) 
                 
         self.valida_quantidade(estoque)
     end
 
 
     def devolve_compra
-        estoque = Movimento.por_operacao(@produto, Date.today, 2) #compra
+        estoque = Movimento.por_operacao(@produto, Date.today, 2)
 
         self.valida_quantidade(estoque)
     end
 
     def devolve_venda
-        estoque = Movimento.por_operacao(@produto, Date.today, 1) #venda
+        estoque = Movimento.por_operacao(@produto, Date.today, 1)
 
         self.valida_quantidade(estoque)
     end
