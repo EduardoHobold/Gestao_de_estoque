@@ -8,6 +8,10 @@ RSpec.describe MovimentoEstoque, type: :model do
     it { should belong_to(:pessoa) }
     it { should validate_presence_of(:data) }
     it { should validate_presence_of(:quantidade) }
+    it { should validate_presence_of(:pessoa) }
+    it { should validate_presence_of(:produto) }
+    it { should validate_presence_of(:operacao) }
+
   end
 
 end
